@@ -3,10 +3,12 @@ package com.gracker.tabfragment;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
-import android.widget.RelativeLayout;
 import android.widget.TabHost;
 
 import com.and.netease.utils.MoveBg;
@@ -17,9 +19,14 @@ import fragment_content.TopBarFragment;
 public class MainActivity extends Activity {
 
     RadioGroup radioGroup;
+    RadioButton radioButton;
     ImageView img;
     TabHost tabHost;
-    int startLeft;
+    FrameLayout bottom_layout;
+
+    int startLeft = 0;
+    int paddingLeft = 0;
+    int moveWidth;
     // 当Tab发生变化时，改变tab的标签的显示图片
     private OnCheckedChangeListener checkedChangeListener = new OnCheckedChangeListener() {
 
@@ -29,40 +36,40 @@ public class MainActivity extends Activity {
                     .findFragmentById(R.id.content_fragment);
             TopBarFragment fragmentTopic = (TopBarFragment) getFragmentManager()
                     .findFragmentById(R.id.content_fragment_top);
+            moveWidth = radioButton.getWidth();
+            paddingLeft = (radioButton.getWidth() - img.getWidth()) / 2;
 
             switch (checkedId) {
 
                 case R.id.radio_news:
                     fragment.changeContent(0);
                     fragmentTopic.changeContent(0);
-                    MoveBg.moveFrontBg(img, startLeft, 0, 0, 0);
-                    startLeft = 0;
+                    MoveBg.moveFrontBg(img, startLeft + paddingLeft, 0, 0, 0);
+                    startLeft = paddingLeft;
                     break;
                 case R.id.radio_topic:
                     fragment.changeContent(1);
                     fragmentTopic.changeContent(1);
-                    MoveBg.moveFrontBg(img, startLeft, img.getWidth(), 0, 0);
-                    startLeft = img.getWidth();
+                    MoveBg.moveFrontBg(img, startLeft, moveWidth , 0, 0);
+                    startLeft = moveWidth ;
                     break;
                 case R.id.radio_pic:
                     fragment.changeContent(2);
                     fragmentTopic.changeContent(2);
-                    MoveBg.moveFrontBg(img, startLeft, img.getWidth() * 2, 0, 0);
-                    startLeft = img.getWidth() * 2;
+                    MoveBg.moveFrontBg(img, startLeft, moveWidth * 2, 0, 0);
+                    startLeft = moveWidth * 2 ;
                     break;
                 case R.id.radio_follow:
                     fragment.changeContent(3);
                     fragmentTopic.changeContent(3);
-                    MoveBg.moveFrontBg(img, startLeft, img.getWidth() * 3, 0, 0);
-                    startLeft = img.getWidth() * 3;
+                    MoveBg.moveFrontBg(img, startLeft, moveWidth * 3 , 0, 0);
+                    startLeft = moveWidth * 3 ;
                     break;
                 case R.id.radio_vote:
                     fragment.changeContent(4);
                     fragmentTopic.changeContent(4);
-
-                    tabHost.setCurrentTabByTag("vote");
-                    MoveBg.moveFrontBg(img, startLeft, img.getWidth() * 4, 0, 0);
-                    startLeft = img.getWidth() * 4;
+                    MoveBg.moveFrontBg(img, startLeft, moveWidth * 4 , 0, 0);
+                    startLeft = moveWidth * 4 ;
                     break;
 
                 default:
@@ -70,7 +77,6 @@ public class MainActivity extends Activity {
             }
         }
     };
-    RelativeLayout bottom_layout;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -78,14 +84,18 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         tabHost = (TabHost) findViewById(R.id.tabhost);
-        bottom_layout = (RelativeLayout) findViewById(R.id.layout_bottom);
+        bottom_layout = (FrameLayout) findViewById(R.id.content_bg);
 
         radioGroup = (RadioGroup) findViewById(R.id.radiogroup);
         radioGroup.setOnCheckedChangeListener(checkedChangeListener);
 
         img = new ImageView(this);
         img.setImageResource(R.drawable.tab_front_bg);
-        bottom_layout.addView(img);
+        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        bottom_layout.addView(img, layoutParams);
+
+        radioButton = (RadioButton) findViewById(R.id.radio_follow);
+
     }
 
     @Override

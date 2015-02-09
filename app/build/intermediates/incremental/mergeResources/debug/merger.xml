@@ -4,9 +4,9 @@
     </style><style name="layout_wrap">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
+    </style><style name="layout_horizontal" parent="layout_full">
+        <item name="android:layout_width">0px</item>
     </style><style name="layout_full">
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">fill_parent</item>
-    </style><style name="layout_horizontal" parent="layout_full">
-        <item name="android:layout_width">0px</item>
     </style></file><file path="/Users/gaojack/gitlab/NetEase/app/src/main/res/values/styles.xml" qualifiers=""><style name="AppTheme" parent="android:Theme.Light"/></file><file path="/Users/gaojack/gitlab/NetEase/app/src/main/res/values-v11/styles.xml" qualifiers="v11"><style name="AppTheme" parent="android:Theme.Holo.Light"/></file><file path="/Users/gaojack/gitlab/NetEase/app/src/main/res/values-v14/styles.xml" qualifiers="v14"><style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar"/></file></source><source path="/Users/gaojack/gitlab/NetEase/app/build/generated/res/rs/debug"/><source path="/Users/gaojack/gitlab/NetEase/app/build/generated/res/generated/debug"/></dataSet><dataSet config="debug"><source path="/Users/gaojack/gitlab/NetEase/app/src/debug/res"/></dataSet><mergedItems/></merger>

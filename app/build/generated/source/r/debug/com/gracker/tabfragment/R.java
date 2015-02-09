@@ -35,12 +35,12 @@ public final class R {
         public static final int tab_selector_vote=0x7f020015;
     }
     public static final class id {
+        public static final int content_bg=0x7f070004;
         public static final int content_fragment=0x7f070003;
         public static final int content_fragment_top=0x7f070002;
         public static final int fragment_context_context=0x7f07000d;
         public static final int fragment_topbar_topic=0x7f07000f;
         public static final int img_netease_top=0x7f07000c;
-        public static final int layout_bottom=0x7f070004;
         public static final int layout_content=0x7f07000b;
         public static final int layout_top=0x7f07000e;
         public static final int linearlayout=0x7f070001;

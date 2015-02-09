@@ -20,12 +20,12 @@ int drawable tab_selector_news 0x7f020012
 int drawable tab_selector_pic 0x7f020013
 int drawable tab_selector_topic 0x7f020014
 int drawable tab_selector_vote 0x7f020015
+int id content_bg 0x7f070004
 int id content_fragment 0x7f070003
 int id content_fragment_top 0x7f070002
 int id fragment_context_context 0x7f07000d
 int id fragment_topbar_topic 0x7f07000f
 int id img_netease_top 0x7f07000c
-int id layout_bottom 0x7f070004
 int id layout_content 0x7f07000b
 int id layout_top 0x7f07000e
 int id linearlayout 0x7f070001

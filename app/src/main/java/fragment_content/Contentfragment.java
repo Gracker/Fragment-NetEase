@@ -38,24 +38,19 @@ public class Contentfragment extends Fragment {
                 R.id.fragment_context_context);
         switch (index) {
             case 0:
-
-                mTextView.setText("1");
+                mTextView.setText(R.string.news_top_left_text);
                 break;
             case 1:
-
-                mTextView.setText("2");
+                mTextView.setText(R.string.topic_top_left_text);
                 break;
             case 2:
-
-                mTextView.setText("3");
+                mTextView.setText(R.string.picture_top_left_text);
                 break;
             case 3:
-
-                mTextView.setText("4");
+                mTextView.setText(R.string.follow_top_left_text);
                 break;
             case 4:
-
-                mTextView.setText("5");
+                mTextView.setText(R.string.vote_top_left_text);
                 break;
             default:
                 break;

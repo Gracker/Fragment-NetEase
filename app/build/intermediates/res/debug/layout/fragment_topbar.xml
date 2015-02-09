@@ -11,7 +11,8 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_marginLeft="10dip"
-        android:src="@drawable/netease_top" />
+        android:layout_marginRight="20dp"
+        android:src="@drawable/ic_launcher" />
 
     <TextView
         android:id="@+id/fragment_topbar_topic"
@@ -19,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_toRightOf="@+id/img_netease_top"
-        android:text="@string/picture_top_left_text"
+        android:text="@string/topic_top_left_text"
         android:textColor="@android:color/white"
         android:textSize="20sp" />
 
