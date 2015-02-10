@@ -50,26 +50,26 @@ public class MainActivity extends Activity {
                 case R.id.radio_topic:
                     fragment.changeContent(1);
                     fragmentTopic.changeContent(1);
-                    MoveBg.moveFrontBg(img, startLeft, moveWidth , 0, 0);
-                    startLeft = moveWidth ;
+                    MoveBg.moveFrontBg(img, startLeft, moveWidth, 0, 0);
+                    startLeft = moveWidth;
                     break;
                 case R.id.radio_pic:
                     fragment.changeContent(2);
                     fragmentTopic.changeContent(2);
                     MoveBg.moveFrontBg(img, startLeft, moveWidth * 2, 0, 0);
-                    startLeft = moveWidth * 2 ;
+                    startLeft = moveWidth * 2;
                     break;
                 case R.id.radio_follow:
                     fragment.changeContent(3);
                     fragmentTopic.changeContent(3);
-                    MoveBg.moveFrontBg(img, startLeft, moveWidth * 3 , 0, 0);
-                    startLeft = moveWidth * 3 ;
+                    MoveBg.moveFrontBg(img, startLeft, moveWidth * 3, 0, 0);
+                    startLeft = moveWidth * 3;
                     break;
                 case R.id.radio_vote:
                     fragment.changeContent(4);
                     fragmentTopic.changeContent(4);
-                    MoveBg.moveFrontBg(img, startLeft, moveWidth * 4 , 0, 0);
-                    startLeft = moveWidth * 4 ;
+                    MoveBg.moveFrontBg(img, startLeft, moveWidth * 4, 0, 0);
+                    startLeft = moveWidth * 4;
                     break;
 
                 default:
@@ -102,5 +102,28 @@ public class MainActivity extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_main, menu);
         return true;
+    }
+
+    @Override
+    public void onTrimMemory(int level) {
+        super.onTrimMemory(level);
+        switch (level) {
+            case TRIM_MEMORY_UI_HIDDEN:
+                break;
+            case TRIM_MEMORY_BACKGROUND:
+                break;
+            case TRIM_MEMORY_COMPLETE:
+                break;
+            case TRIM_MEMORY_MODERATE:
+                break;
+            case TRIM_MEMORY_RUNNING_CRITICAL:
+                break;
+            case TRIM_MEMORY_RUNNING_LOW:
+                break;
+            case TRIM_MEMORY_RUNNING_MODERATE:
+                break;
+            default:
+                break;
+        }
     }
 }
