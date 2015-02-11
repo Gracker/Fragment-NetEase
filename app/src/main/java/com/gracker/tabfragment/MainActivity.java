@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
-import android.widget.TabHost;
 
 import com.and.netease.utils.MoveBg;
 
@@ -21,12 +20,12 @@ public class MainActivity extends Activity {
     RadioGroup radioGroup;
     RadioButton radioButton;
     ImageView img;
-    TabHost tabHost;
     FrameLayout bottom_layout;
 
     int startLeft = 0;
     int paddingLeft = 0;
     int moveWidth;
+
     // 当Tab发生变化时，改变tab的标签的显示图片
     private OnCheckedChangeListener checkedChangeListener = new OnCheckedChangeListener() {
 
@@ -40,7 +39,6 @@ public class MainActivity extends Activity {
             paddingLeft = (radioButton.getWidth() - img.getWidth()) / 2;
 
             switch (checkedId) {
-
                 case R.id.radio_news:
                     fragment.changeContent(0);
                     fragmentTopic.changeContent(0);
@@ -83,7 +81,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tabHost = (TabHost) findViewById(R.id.tabhost);
         bottom_layout = (FrameLayout) findViewById(R.id.content_bg);
 
         radioGroup = (RadioGroup) findViewById(R.id.radiogroup);
@@ -91,7 +88,10 @@ public class MainActivity extends Activity {
 
         img = new ImageView(this);
         img.setImageResource(R.drawable.tab_front_bg);
-        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        FrameLayout.LayoutParams layoutParams =
+                new FrameLayout.LayoutParams(
+                        FrameLayout.LayoutParams.WRAP_CONTENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT);
         bottom_layout.addView(img, layoutParams);
 
         radioButton = (RadioButton) findViewById(R.id.radio_follow);

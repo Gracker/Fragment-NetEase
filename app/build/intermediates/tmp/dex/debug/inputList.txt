@@ -1,4 +1,0 @@
-/Users/gaojack/gitlab/NetEase/app/build/intermediates/classes/debug
-/Users/gaojack/gitlab/NetEase/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-4c0bf0e7c6f07a75a68f83a039d4129e2fc3f605.jar
-/Users/gaojack/gitlab/NetEase/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-b344e282b077ab76f408a35b0fee1cdc3ee0a710.jar
-/Users/gaojack/gitlab/NetEase/app/build/intermediates/pre-dexed/debug/classes-bb7b8b62096d9bd2f85d4a04be4e773960233324.jar

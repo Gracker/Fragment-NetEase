@@ -3,10 +3,6 @@
     style="@style/layout_full"
     android:orientation="vertical">
 
-    <TabHost
-        android:id="@+id/tabhost"
-        style="@style/layout_full">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -100,5 +96,4 @@
                 </RadioGroup>
             </FrameLayout>
         </LinearLayout>
-    </TabHost>
 </LinearLayout>
